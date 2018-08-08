@@ -98,3 +98,7 @@ sed -i '/web_tls_key_password/{s/#//}' /etc/graylog/server/server.conf
 sed -i '/web_tls_key_password/{s/=.*/=/}' /etc/graylog/server/server.conf
 sed -i "/web_tls_key_password =/ s|$| ${KEYPWD}|" /etc/graylog/server/server.conf
 
+# Restart services
+systemctl restart elasticsearch.service
+systemctl restart graylog-server.service
+
